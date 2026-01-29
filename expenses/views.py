@@ -1,4 +1,8 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Привет! Это мой трекер расходов.")
+    context = {
+        'name': 'Артём' 
+    }
+
+    return render(request, 'expenses/index.html', context)
